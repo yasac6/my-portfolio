@@ -21,8 +21,8 @@
     <h2>Projects</h2>
     <ul>
       <li>
-        <strong>Doori Website</strong>  
-        – <a href="https://doori.netlify.app" target="_blank">Live Site</a>
+        <strong>Doori Website</strong> – 
+        <a href="https://doori.netlify.app" target="_blank">Live Site</a>
       </li>
     </ul>
   </section>
@@ -32,8 +32,32 @@
     <p>Email: yasacxuseen252@gmail.com</p>
   </section>
 
+  <div class="section-container">
+    <div class="section">About Me</div>
+    <div class="section">Projects</div>
+    <div class="section">Contact</div>
+  </div>
+
+  <button>Click Me!</button>
+
   <footer>
     <p>© 2025 Yasac Hussein</p>
   </footer>
+
+  <button id="toggle-theme">Toggle Theme</button>
+
+  <script>
+    const btn = document.getElementById('toggle-theme');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+      }
+    };
+  </script>
 </body>
 </html>
